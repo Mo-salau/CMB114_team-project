@@ -2,6 +2,9 @@
 Example code that contains a class.
 """
 
+def yoyo_test():
+    print("Let's test this.")
+
 class myclass:
     """
     This class takes a number upon initialisation.
