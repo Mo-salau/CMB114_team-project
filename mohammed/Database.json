@@ -1,0 +1,280 @@
+{
+  "si_prefixes": {
+    "T": 1000000000000,
+    "G": 1000000000,
+    "M": 1000000,
+    "k": 1000,
+    "m": 0.001,
+    "μ": 0.000001,
+    "n": 1e-9,
+    "p": 1e-12,
+    "f": 1e-15,
+    "a": 1e-18
+  },
+  "units": [
+    {
+      "symbol": "J",
+      "name": "Joule",
+      "category": "SI",
+      "type": "linear",
+      "factor_to_J": 1,
+      "si_prefixes": true,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2
+      },
+      "note": " SI base unit of energy. Everything else converts relative to it 1 J = 1 kg·m²·s⁻²."
+    },
+    {
+      "symbol": "eV",
+      "name": "Electronvolt",
+      "category": "atomic",
+      "type": "linear",
+      "factor_to_J": 1.6021e-19,
+      "si_prefixes": true,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2
+      },
+      "note": "Energy gained by one electron moving through 1 volt. 1 eV = 1.602e-19 J."
+    },
+    {
+      "symbol": "Eh",
+      "name": "Hartree",
+      "category": "atomic",
+      "type": "linear",
+      "factor_to_J": 4.3597e-18,
+      "si_prefixes": false,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2
+      },
+      "note": "The atomic unit of energy used in chemistry calculations 1 Eh = 27.2114 eV = 627.5 kcal/mol. ."
+    },
+    {
+      "symbol": "cal",
+      "name": "Calorie",
+      "category": "thermochemical",
+      "type": "linear",
+      "factor_to_J": 4.184,
+      "si_prefixes": false,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2
+      },
+      "note": " 1 cal = 4.184 J Heat to raise 1g of water by 1°C."
+    },
+    {
+      "symbol": "kcal",
+      "name": "Kilocalorie",
+      "category": "thermochemical",
+      "type": "linear",
+      "factor_to_J": 4184,
+      "si_prefixes": false,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2
+      },
+      "note": "1 kcal = 1000 cal = 4184 J."
+    },
+    {
+      "symbol": "kJ/mol",
+      "name": "Kilojoule per mole",
+      "category": "molar",
+      "type": "linear",
+      "factor_to_J": 1.6605e-21,
+      "si_prefixes": false,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2,
+        "N": -1
+      },
+      "note": "factor = 1000 / N_A where N_A = 6.02214076e23 mol⁻¹ (Avogadro's number). This converts from per-mole to per-molecule."
+    },
+    {
+      "symbol": "kcal/mol",
+      "name": "Kilocalorie per mole",
+      "category": "molar",
+      "type": "linear",
+      "factor_to_J": 6.9477e-21,
+      "si_prefixes": false,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2,
+        "N": -1
+      },
+      "note": "factor = 4184 / N_A. 1 kcal/mol = 4.184 kJ/mol."
+    },
+    {
+      "symbol": "J/mol",
+      "name": "Joule per mole",
+      "category": "molar",
+      "type": "linear",
+      "factor_to_J": 1.6605e-24,
+      "si_prefixes": false,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2,
+        "N": -1
+      },
+      "note": "factor = 1 / N_A."
+    },
+    {
+      "symbol": "K",
+      "name": "Kelvin (thermal energy k_B·T)",
+      "category": "thermal",
+      "type": "linear",
+      "factor_to_J": 1.3806e-23,
+      "si_prefixes": false,
+      "dimensions": {
+        "M": 1,
+        "L": 2,
+        "T": -2
+      },
+      "note": "factor = k_B (Boltzmann constant) = 1.380649e-23 J/K. Converts temperature T to the thermal energy scale k_B·T.  k_B·T ≈ 0.026 eV."
+    },
+    {
+      "symbol": "cm⁻¹",
+      "name": "Wavenumber",
+      "category": "spectroscopic",
+      "type": "wavenumber",
+      "scale_to_per_metre": 100,
+      "si_prefixes": false,
+      "dimensions": {
+        "L": -1
+      },
+      "note": " E = h·c·ṽ where ṽ is in m⁻¹. Multiply cm⁻¹ by 100 to get m⁻¹. 1000 cm⁻¹ ≈ 0.124 eV."
+    },
+    {
+      "symbol": "Hz",
+      "name": "Hertz",
+      "category": "spectroscopic",
+      "type": "photon_frequency",
+      "scale_to_Hz": 1,
+      "si_prefixes": true,
+      "dimensions": {
+        "T": -1
+      },
+      "note": " E = h·ν where h = 6.626e-34 J·s (Planck constant)."
+    },
+    {
+      "symbol": "nm",
+      "name": "Nanometre (wavelength)",
+      "category": "spectroscopic",
+      "type": "photon_wavelength",
+      "scale_to_metres": 1e-9,
+      "si_prefixes": false,
+      "dimensions": {
+        "L": 1
+      },
+      "note": "E = h·c/λ where λ is in metres. Multiply nm by 1e-9 to get metres. Visible light is 380-780 nm. UV = below 380 nm."
+    },
+    {
+      "symbol": "μm",
+      "name": "Micrometre (wavelength)",
+      "category": "spectroscopic",
+      "type": "photon_wavelength",
+      "scale_to_metres": 0.000001,
+      "si_prefixes": false,
+      "dimensions": {
+        "L": 1
+      },
+      "note": "wavelength in micrometres. Multiply μm by 1e-6 to get metres."
+    },
+    {
+      "symbol": "Å",
+      "name": "Ångström (wavelength)",
+      "category": "spectroscopic",
+      "type": "photon_wavelength",
+      "scale_to_metres": 1e-10,
+      "si_prefixes": false,
+      "dimensions": {
+        "L": 1
+      },
+      "note": "1 Å = 0.1 nm = 1e-10 m."
+    }
+  ],
+  "em_regions": {
+    "regions": [
+      {
+        "name": "Radio",
+        "min_wavelength_m": 0.001,
+        "max_wavelength_m": 10000000000,
+        "wavelength_range": "> 1 mm",
+        "molecular_process": "Nuclear spin flips (NMR)",
+        "real_life_example": "MRI scanners, radio broadcasting"
+      },
+      {
+        "name": "Microwave",
+        "min_wavelength_m": 0.001,
+        "max_wavelength_m": 1,
+        "wavelength_range": "1 mm – 1 m",
+        "molecular_process": "Molecular rotational transitions",
+        "real_life_example": "Microwave ovens (2.45 GHz), radar"
+      },
+      {
+        "name": "Infrared",
+        "min_wavelength_m": 7.8e-7,
+        "max_wavelength_m": 0.001,
+        "wavelength_range": "780 nm – 1 mm",
+        "molecular_process": "Molecular vibrational modes",
+        "real_life_example": "Thermal cameras, TV remote controls"
+      },
+      {
+        "name": "Visible",
+        "min_wavelength_m": 3.8e-7,
+        "max_wavelength_m": 7.8e-7,
+        "wavelength_range": "380 – 780 nm",
+        "molecular_process": "Outer-electron excitation",
+        "real_life_example": "Human vision, photography"
+      },
+      {
+        "name": "UV",
+        "min_wavelength_m": 1e-8,
+        "max_wavelength_m": 3.8e-7,
+        "wavelength_range": "10 – 380 nm",
+        "molecular_process": "Valence electron excitation",
+        "real_life_example": "Sunburn, UV sterilisation"
+      },
+      {
+        "name": "X-ray",
+        "min_wavelength_m": 1e-11,
+        "max_wavelength_m": 1e-8,
+        "wavelength_range": "0.01 – 10 nm",
+        "molecular_process": "Core-electron excitation / ionisation",
+        "real_life_example": "Medical imaging, airport scanners"
+      },
+      {
+        "name": "Gamma",
+        "min_wavelength_m": 0,
+        "max_wavelength_m": 1e-11,
+        "wavelength_range": "< 0.01 nm",
+        "molecular_process": "Nuclear transitions / pair production",
+        "real_life_example": "Cancer radiotherapy, nuclear decay"
+      }
+    ]
+  },
+  "energy_levels": {
+    "_note": "Used to classify any energy as Low, Medium or High. The engine compares the energy in Joules against these thresholds.",
+    "low_threshold_J": 1e-23,
+    "high_threshold_J": 1e-17,
+    "labels": {
+      "low": "Low (thermal)",
+      "medium": "Medium",
+      "high": "High (ionising)"
+    },
+    "colours": {
+      "low": "cyan",
+      "medium": "yellow",
+      "high": "red"
+    }
+  }
+}
