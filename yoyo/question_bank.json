@@ -1,0 +1,42 @@
+{
+  "beginner": [
+    {
+      "type": "multiple choice",
+      "question": "Which type of electromagnetic radiation has the highest energy?",
+      "options": ["A. Radio", "B. Microwave", "C. Visible", "D. Gamma"],
+      "answer": "D",
+      "explanation": "Gamma rays have the shortest wavelength and highest frequency."
+    },
+    {
+      "type": "multiple choice",
+      "question": "Which type of electromagnetic radiation has the lowest energy?",
+      "options": ["A. Radio", "B. Microwave", "C. Visible", "D. Infrared"],
+      "answer": "A",
+      "explanation": "Radio waves have the longest wavelength and lowest frequency."  
+    },
+    {
+      "type": "definition",
+      "question": "The first law of thermodynamics states that energy cannot be either...",
+      "options": "",
+      "answer": ["created or destoryed", "destoryed or created"],
+      "explanation": "The first law of thermodynamics states that energy cannot be either created or destoryed."  
+    }
+  ],
+  "intermediate": [
+    {
+      "type": "unit conversion",
+      "question": "Given an energy in eV, select the correct Joule equivalent.",
+      "options": ["1.602e-19 J", "4.184 J", "1000 J", "1 J"],
+      "answer": "1.602e-19 J",
+      "explanation": "1 eV is defined as 1.602 x 10^-19 Joules."
+    }
+  ],
+  "hard": [
+    {
+        "type": "estimation",
+        "question": "A C-H bond has energy 4 eV. What is this in kJ/mol (to the nearest 10)?",
+        "answer": "390",
+        "explanation": "4 eV x 1.602e-19 J (convert to J) x 6.022e23 (per molecule) ÷ 1000 (convert to kJ) = 385.89 kJ/mol = 390 kJ/mol (to the nearest 10)" 
+    }
+  ]
+}
