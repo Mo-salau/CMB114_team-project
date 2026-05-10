@@ -16,5 +16,5 @@ At the end of the quiz, a summary report will be exported. Leaderboard also avai
 Leaderboard is available when more than one attempts recorded. Higher ranking when you get a higher score.
 To access the leaderboard, you will need to go back to the page where you choose the difficulty. Then, enter "4" to choose "4. Leaderboard".
 
-## References for Part 2
+## References for Energy quiz
 Time library for the quiz: https://docs.python.org/3/library/time.html
