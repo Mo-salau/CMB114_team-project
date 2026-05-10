@@ -1,9 +1,9 @@
-# CMB114 Team Project
+# CMB114 CW2 Unit converter and energy quiz tool by Yoyo and Muhammed
 
 
-The code is divided between folders `mohammed` and `yoyo`. for their group project
+The code is divided between folders `mohammed` and `yoyo` the group project.
 
 You can run the code by calling
 ~~~~
-./driver.py
+main.py
 ~~~~
