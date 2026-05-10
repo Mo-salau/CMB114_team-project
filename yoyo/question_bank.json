@@ -1,0 +1,74 @@
+
+{
+  "beginner": [
+    {
+      "type": "multiple choice",
+      "question": "Which type of electromagnetic radiation has the highest energy?",
+      "options": ["A. Radio", "B. Microwave", "C. Visible", "D. Gamma"],
+      "answer": "D",
+      "explanation": "Gamma rays have the shortest wavelength and highest frequency."
+    },
+    {
+      "type": "multiple choice",
+      "question": "Which type of electromagnetic radiation has the lowest energy?",
+      "options": ["A. Radio", "B. Microwave", "C. Visible", "D. Infrared"],
+      "answer": "A",
+      "explanation": "Radio waves have the longest wavelength and lowest frequency."  
+    },
+    {
+      "type": "multiple choice",
+      "question": "Which type of electromagnetic radiation has the lowest frequency?",
+      "options": ["A. Radio", "B. Microwave", "C. Visible", "D. Infrared"],
+      "answer": "A",
+      "explanation": "Radio waves have the longest wavelength and lowest frequency."  
+    },
+    {
+      "type": "multiple choice",
+      "question": "Which type of electromagnetic radiation has the highest frequency?",
+      "options": ["A. Radio", "B. Microwave", "C. Visible", "D. Gamma"],
+      "answer": "D",
+      "explanation": "Gamma rays have the shortest wavelength and highest frequency."
+    },
+    {
+      "type": "multiple choice",
+      "question": "High-frequency waves have:",
+      "options": ["A. Long wavelengths", "B. Short wavelengths", "C. The same wavelength as low-frequency waves", "D. Varying wavelengths"],
+      "answer": "B",
+      "explanation": "Shorter wavelength gives a higher frequency."
+    }
+
+  ],
+  "intermediate": [
+    {
+      "type": "definition",
+      "question": "The first law of thermodynamics states that energy cannot be either...",
+      "answer": "created or destroyed",
+      "explanation": "Energy can not be created or destroyed."
+    },
+    {
+      "type": "definition",
+      "question": "What is the SI unit of frequency? Give out its symbol.",
+      "answer": "hz",
+      "explanation": "Hertz (Hz), which is equivalent to s^-1." 
+    },
+    {
+      "type": "definition",
+      "question": "What is a wavenumber?",
+      "answer": "number of waves per unit distance",
+      "explanation": "The number of waves per unit distance, usually used in spectroscopy."
+    },
+    {
+      "type": "definition",
+      "question": "What does a higher frequency mean in a wave? (Think about the oscillation)",
+      "answer": "more oscillations per second",
+      "explanation": "Energy can not be created or destroyed."
+    },
+    {
+      "type": "definition",
+      "question": "How is frequency related to wavelength? Frequency is ... to wavelength. (Fill in the gap)",
+      "answer": "inversely proportional",
+      "explanation": "Frequency is inversely proportional to wavelength."
+    }
+
+  ]
+}
