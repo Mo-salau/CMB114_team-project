@@ -3,13 +3,10 @@
 from mohammed.featureA import *
 from yoyo.featureB import *
 
-print("*** Starting the driver script ***\n")
+# main.py - Entry point for CMB114 CW2
+# Run: python main.py
 
-# Call hello_world from student1.featureA
-hello_world()
-sub2()
+import converter_ui
 
-# Initialize the class from student2.featureB
-mc = myclass(5)
-# Print the number
-mc.print_num()
+if __name__ == "__main__":
+    converter_ui.main()
