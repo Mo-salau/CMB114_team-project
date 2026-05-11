@@ -32,7 +32,6 @@ for u in DB["units"]:
 # Conversion history for the last 10 conversions
 history = []
 
-
 # Converting the value in unit given to Joules
 def to_joules(value, unit):
     u = UNITS[unit]
@@ -44,7 +43,6 @@ def to_joules(value, unit):
         return H * (value * u["scale_to_Hz"])
     elif u["type"] == "wavenumber":
         return H * C * (value * u["scale_to_per_metre"])
-
 
 # Converting Joules to the given unit
 def from_joules(joules, unit):
@@ -58,15 +56,13 @@ def from_joules(joules, unit):
     elif u["type"] == "wavenumber":
         return joules / (H * C * u["scale_to_per_metre"])
 
-
-# Converting values to all units in the database, returns a dict
+# Converting values to all units in the database, to return a dict
 def convert_all(value, from_unit):
     joules = to_joules(value, from_unit)
     results = {u: from_joules(joules, u) for u in ALL_UNITS}
     save_to_history(value, from_unit, joules)
     return results
-
-
+    
 # Classifying energy as low, medium or high
 def classify_energy(joules):
     if joules <= ENERGY_LEVELS["low_threshold_J"]:
@@ -76,7 +72,6 @@ def classify_energy(joules):
     else:
         return ENERGY_LEVELS["labels"]["medium"]
 
-
 # Return the EM region for a given energy in Joules
 def get_em_region(joules):
     for region in EM_REGIONS:
@@ -84,13 +79,11 @@ def get_em_region(joules):
             return region
     return EM_REGIONS[-1]
 
-
 # Compatibility check
 def check_compatible(unit1, unit2):
     dims1 = UNITS[unit1].get("dimensions", {})
     dims2 = UNITS[unit2].get("dimensions", {})
     return dims1 == dims2
-
 
 # Saving last 10 conversions to make conversion history
 def save_to_history(value, unit, joules):
@@ -103,49 +96,40 @@ def save_to_history(value, unit, joules):
     if len(history) > 10:
         history.pop(0)
 
-
 # Return the conversion history 
 def get_history():
     return history
 
-
 # Clear the conversion history
 def clear_history():
     history.clear()
-
 
 # Physics Mode functions
 
 # Planck law: E = h * frequency
 def planck_frequency(freq_hz):
     return H * freq_hz
-
-
+    
 # Planck law: E = h * c / wavelength
 def planck_wavelength(wavelength_nm):
     return (H * C) / (wavelength_nm * 1e-9)
-
 
 # Einstein mass-energy: E = m * c²
 def einstein_mass_energy(mass_kg):
     return mass_kg * C ** 2
 
-
 # Boltzmann thermal energy: E = kB * T
 def boltzmann_thermal(temp_k):
     return KB * temp_k
-
-
+    
 # Voltage energy: E = charge * voltage
 def voltage_energy(voltage_v, num_electrons):
     return num_electrons * E * voltage_v
-
 
 # Molar scaling: convert a per-molecule energy to per-mole
 def to_molar(joules_per_molecule):
     na = 6.02214076e23
     return joules_per_molecule * na
-
 
 # Molar scaling: convert a per-mole energy to per-molecule
 def from_molar(joules_per_mole):
