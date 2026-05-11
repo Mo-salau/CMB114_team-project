@@ -1,9 +1,10 @@
 # Energy quiz
 The quiz covers the frequency, wavelengths and energy in physical chemistry. It is divided into three difficulties: Beginner, Intermediate and Advanced.
 It has different question types, such as multiple choice, definition, and unit conversion.
-For multiple-choice and definition questions, the questions are stored in a JSON file (question_bank).
-For unit conversion questions, the code randomly generates numbers and units for the questions. The units are from the unit database.
+For multiple-choice and definition questions, the questions are stored in a JSON file (question_bank.json).
+For unit conversion questions, the code randomly generates numbers and units for the questions. The units are from the dictionary in the code.
 At the end of the quiz, a summary report will be exported. Leaderboard is also available if there is more than one attempt at the quiz.
+Explaination and correct answer are shown after getting the question correctly or choose not to retry after getting the question wrong.
 
 ## How to use the quiz function 
 1. When entering the menu, choose "2. Energy quiz".
