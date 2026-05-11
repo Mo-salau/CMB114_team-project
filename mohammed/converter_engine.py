@@ -6,11 +6,12 @@ Constants from NIST CODATA 2018: https://physics.nist.gov/cuu/Constants/
 import json
 
 # Physical constants
-H  = 6.62607015e-34   # Planck constant (J·s)
-C  = 2.99792458e8     # Speed of light (m/s)
-KB = 1.380649e-23     # Boltzmann constant (J/K)
-E  = 1.602176634e-19  # Elementary charge (C)
-ME = 9.1093837015e-31 # Electron mass (kg)
+class PhysicalConstants:
+    H  = 6.62607015e-34   # Planck constant (J·s)
+    C  = 2.99792458e8     # Speed of light (m/s)
+    KB = 1.380649e-23     # Boltzmann constant (J/K)
+    E  = 1.602176634e-19  # Elementary charge (C)
+    ME = 9.1093837015e-31 # Electron mass (kg)
 
 # Load database
 with open("Database.json", "r") as f:
@@ -40,11 +41,11 @@ def to_joules(value, unit):
     if u["type"] == "linear":
         return value * u["factor_to_J"]
     elif u["type"] == "photon_wavelength":
-        return (H * C) / (value * u["scale_to_metres"])
+        return (PhysicalConstants.H * PhysicalConstants.C) / (value * u["scale_to_metres"])
     elif u["type"] == "photon_frequency":
-        return H * (value * u["scale_to_Hz"])
+        return PhysicalConstants.H * (value * u["scale_to_Hz"])
     elif u["type"] == "wavenumber":
-        return H * C * (value * u["scale_to_per_metre"])
+        return PhysicalConstants.H * PhysicalConstants.C * (value * u["scale_to_per_metre"])
 
 # Converting Joules to the given unit
 def from_joules(joules, unit):
@@ -52,11 +53,11 @@ def from_joules(joules, unit):
     if u["type"] == "linear":
         return joules / u["factor_to_J"]
     elif u["type"] == "photon_wavelength":
-        return (H * C) / joules / u["scale_to_metres"]
+        return (PhysicalConstants.H * PhysicalConstants.C) / joules / u["scale_to_metres"]
     elif u["type"] == "photon_frequency":
-        return joules / H / u["scale_to_Hz"]
+        return joules / PhysicalConstants.H / u["scale_to_Hz"]
     elif u["type"] == "wavenumber":
-        return joules / (H * C * u["scale_to_per_metre"])
+        return joules / (PhysicalConstants.H * PhysicalConstants.C * u["scale_to_per_metre"])
 
 # Converting values to all units in the database, to return a dict
 def convert_all(value, from_unit):
@@ -110,23 +111,23 @@ def clear_history():
 
 # Planck law: E = h * frequency
 def planck_frequency(freq_hz):
-    return H * freq_hz
+    return PhysicalConstants.H * freq_hz
     
 # Planck law: E = h * c / wavelength
 def planck_wavelength(wavelength_nm):
-    return (H * C) / (wavelength_nm * 1e-9)
+    return (PhysicalConstants.H * PhysicalConstants.C) / (wavelength_nm * 1e-9)
 
 # Einstein mass-energy: E = m * c²
 def einstein_mass_energy(mass_kg):
-    return mass_kg * C ** 2
+    return mass_kg * PhysicalConstants.C ** 2
 
 # Boltzmann thermal energy: E = kB * T
 def boltzmann_thermal(temp_k):
-    return KB * temp_k
+    return PhysicalConstants.KB * temp_k
     
 # Voltage energy: E = charge * voltage
 def voltage_energy(voltage_v, num_electrons):
-    return num_electrons * E * voltage_v
+    return num_electrons * PhysicalConstants.E * voltage_v
 
 # Molar scaling: convert a per-molecule energy to per-mole
 def to_molar(joules_per_molecule):
