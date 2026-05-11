@@ -1,9 +1,13 @@
-# converter_ui.py - interface for the unit converter by Mo
+""" 
+converter_ui.py - interface for the unit converter by Mo
+"""
 
 import converter_engine as eng
 from quiz import run_quiz
 
-# Printing the conversion results as a table
+""" 
+Printing the conversion results as a table
+"""
 def print_table(results):
     print(f"\n{'Unit':<28} {'Value':>16}")
     print("-" * 46)
@@ -12,7 +16,9 @@ def print_table(results):
         print(f"{name+' ('+unit+')':<28} {val:<16.4g}")
     print("-" * 46)
 
-# Asking the user to pick a unit by number or symbol, grouped by category
+""" 
+Asking the user to pick a unit by number or symbol, grouped by category
+"""
 def pick_unit(prompt):
     units_flat = []
     print()
@@ -33,7 +39,9 @@ def pick_unit(prompt):
         print("  Not recognised, try again.")
 
 
-# Prompting the user for a number and continuing till one is input
+"""
+Prompting the user for a number and continuing till one is input
+"""
 def get_float(prompt):
     while True:
         try:
@@ -41,10 +49,13 @@ def get_float(prompt):
         except ValueError:
             print("  Please enter a valid number.")
 
-# Print EM region (name and wavelength range only)
+"""
+Print EM region (name and wavelength range only)
+"""
 def print_em_region(joules):
     region = eng.get_em_region(joules)
     print(f"  EM Region   : {region['name']}  ({region['wavelength_range']})")
+
 
 # Warnings for units that are not straightforward energy units
 UNIT_WARNINGS = {
@@ -55,7 +66,9 @@ UNIT_WARNINGS = {
 }
 
 
-# Main unit conversion
+""" 
+Main unit conversion
+"""
 def run_conversion():
     print("\n--- UNIT CONVERSION ---")
     from_unit = pick_unit("Select input unit")
@@ -73,7 +86,9 @@ def run_conversion():
     print_em_region(joules)
     print()
 
-# Physics mode
+"""
+Physics mode
+"""
 def run_physics():
     print("\n--- PHYSICS CALCULATIONS ---")
     print("  Use this when you have a frequency, wavelength, mass,")
@@ -128,7 +143,9 @@ def run_physics():
         print_em_region(joules)
         print()
 
-# Checking if the units are compatible
+"""
+Checking if the units are compatible
+"""
 def run_compatibility_check():
     print("\n--- DIMENSION COMPATIBILITY CHECK ---")
     print("  Use this to check if two units measure the same physical quantity.")
@@ -139,7 +156,9 @@ def run_compatibility_check():
     else:
         print(f"\n  {unit1} and {unit2} are NOT compatible.\n")
 
-# Printing conversion history
+""" 
+Printing conversion history
+"""
 def show_history():
     print("\n--- CONVERSION HISTORY ---")
     record = eng.get_history()
@@ -158,7 +177,20 @@ def show_history():
         eng.clear_history()
         print("  History cleared.\n")
 
-# How to use guide
+"""
+Supported units
+"""
+def show_supported_units():
+    print("\n--- SUPPORTED UNITS ---")
+    for category, symbols in eng.CATEGORIES.items():
+        print(f"\n  [{category}]")
+        for symbol in symbols:
+            print(f"  {symbol:<10} {eng.UNIT_NAMES[symbol]}")
+    print()
+    
+"""
+How to use guide
+"""
 def show_help():
     print("""
 --- HOW TO USE ---
@@ -184,6 +216,9 @@ def show_help():
 
   5. Quiz
      Test your knowledge on energy units.
+     
+  6. Supported Units
+     Lists all units the converter can work with.
 """)
 
 
@@ -198,6 +233,7 @@ def main():
         print("  3. Compatibility check")
         print("  4. Conversion history")
         print("  5. Quiz")
+        print("  6. Supported units")
         print("  h. How to use")
         print("  q. Quit")
         choice = input("\n  Select: ").strip().lower()
@@ -212,6 +248,8 @@ def main():
             show_history()
         elif choice == "5":
             run_quiz()
+        elif choice == "6":
+            show_supported_units()
         elif choice == "h":
             show_help()
         elif choice == "q":
