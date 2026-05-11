@@ -1,5 +1,7 @@
-# converter_engine.py  by Mo- Conversion happens here
-# Constants from NIST CODATA 2018: https://physics.nist.gov/cuu/Constants/
+"""
+converter_engine.py by Mo - Conversion happens here
+Constants from NIST CODATA 2018: https://physics.nist.gov/cuu/Constants/
+"""
 
 import json
 
