@@ -3,7 +3,6 @@
 import converter_engine as eng
 from quiz import run_quiz
 
-
 # Printing the conversion results as a table
 def print_table(results):
     print(f"\n{'Unit':<28} {'Value':>16}")
@@ -12,7 +11,6 @@ def print_table(results):
         name = eng.UNIT_NAMES[unit]
         print(f"{name+' ('+unit+')':<28} {val:<16.4g}")
     print("-" * 46)
-
 
 # Asking the user to pick a unit by number or symbol, grouped by category
 def pick_unit(prompt):
@@ -43,12 +41,10 @@ def get_float(prompt):
         except ValueError:
             print("  Please enter a valid number.")
 
-
 # Print EM region (name and wavelength range only)
 def print_em_region(joules):
     region = eng.get_em_region(joules)
     print(f"  EM Region   : {region['name']}  ({region['wavelength_range']})")
-
 
 # Warnings for units that are not straightforward energy units
 UNIT_WARNINGS = {
@@ -76,7 +72,6 @@ def run_conversion():
     print(f"  Energy in J : {joules:.4e} J")
     print_em_region(joules)
     print()
-
 
 # Physics mode
 def run_physics():
@@ -133,7 +128,6 @@ def run_physics():
         print_em_region(joules)
         print()
 
-
 # Checking if the units are compatible
 def run_compatibility_check():
     print("\n--- DIMENSION COMPATIBILITY CHECK ---")
@@ -144,7 +138,6 @@ def run_compatibility_check():
         print(f"\n  {unit1} and {unit2} are compatible.\n")
     else:
         print(f"\n  {unit1} and {unit2} are NOT compatible.\n")
-
 
 # Printing conversion history
 def show_history():
@@ -164,7 +157,6 @@ def show_history():
     if clear == "y":
         eng.clear_history()
         print("  History cleared.\n")
-
 
 # How to use guide
 def show_help():
