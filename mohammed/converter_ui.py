@@ -3,7 +3,7 @@ converter_ui.py - interface for the unit converter by Mo
 """
 
 from mohammed import converter_engine as eng
-from quiz import run_quiz
+from yoyo.quiz import run_quiz
 
 """ 
 Printing the conversion results as a table
