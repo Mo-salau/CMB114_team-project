@@ -287,7 +287,6 @@ class quiz_class:
                             if abs(user_answer - correct) / correct < 0.01 and correct != 0:
                                 print("Correct!")
                                 score += 1
-                                correct = True
                                 break                           
                             else:
                                 print("Still incorrect.")
