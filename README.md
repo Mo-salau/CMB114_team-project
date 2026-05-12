@@ -9,7 +9,7 @@ python driver.py
 ~~~~
 ## Running from GitHub
 We came across various problems when trying to run the code through git due to our folder structures and python not knowing where some files were, so empty `__init__.py` files
-were added to both folders. This tells Python that the folders have python in them and should treat them as packages
+were added to both folders. This tells Python that the folders have python in them and should treat them as packages.
 
 ## 1. Unit Conversion
 Converts any energy value to all supported units at once.
