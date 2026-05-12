@@ -2,7 +2,7 @@
 converter_ui.py - interface for the unit converter by Mo
 """
 
-import converter_engine as eng
+from mohammed import converter_engine as eng
 from quiz import run_quiz
 
 """ 
