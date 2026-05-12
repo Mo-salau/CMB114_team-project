@@ -7,6 +7,35 @@ You can run the code by calling
 ~~~~
 python driver.py
 ~~~~
+## Running from GitHub
+We came across various problems when trying to run the code through git due to our folder structures and python not knowing where some files were, so empty `__init__.py` files
+were added to both folders. This tells Python that the folders have python in them and should treat them as packages
+
+## 1. Unit Conversion
+Converts any energy value to all supported units at once.
+Units are grouped by category (SI, atomic, thermochemical, molar, thermal, spectroscopic).
+Spectroscopic units (K, Hz, nm, cm-1) show a note explaining how they are converted.
+
+## 2. Physics Mode
+For when you have a physical quantity rather than a direct energy value.
+Supports: Planck (frequency), Planck (wavelength), Einstein (E=mc^2),
+Boltzmann (thermal energy), Voltage, and molar scaling in both directions.
+
+## 3. Compatibility Check
+Checks whether two units measure the same physical quantity using
+the dimension data stored in the database. E.g: J and kJ are
+compatible, but J and nm are not.
+
+## 4. Conversion History
+Stores the last 10 conversions performed and displays them in a table.
+The user can also clear the history from this menu.
+
+## 5. Supported Units
+Lists all units the converter supports, grouped by category,
+pulled directly from the database.
+
+## 6. How To Use
+A built-in help guide explaining what each mode does.
 
 # Energy quiz
 The quiz covers the frequency, wavelengths and energy in physical chemistry. It is divided into three difficulties: Beginner, Intermediate and Advanced.
