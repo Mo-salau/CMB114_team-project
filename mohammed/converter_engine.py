@@ -14,7 +14,7 @@ class PhysicalConstants:
     ME = 9.1093837015e-31 # Electron mass (kg)
 
 # Load database
-with open("Database.json", "r") as f:
+with open("mohammed/Database.json", "r") as f:
     DB = json.load(f)
 
 # Build lookup dicts from the database
