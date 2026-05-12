@@ -7,6 +7,12 @@ import random
 import csv
 import time
 
+"""
+define variables:
+Planck constant (H) and Speed of light (C)
+"""
+H = 6.62607015e-34
+C = 2.99792458e8 
 
 """
 Conversion factors to Joules:
@@ -32,7 +38,7 @@ TO_JOULES = {
 }
 
 """
-open and load the question for beginner and intermediate level stored in JSON file
+open and load the question for beginner and intermediate levels stored in JSON file
 """
 def load_question():
     with open("question_bank.json","r") as data: 
