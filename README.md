@@ -57,5 +57,5 @@ Leaderboard is available when more than one attempts recorded. Higher ranking wh
 To access the leaderboard, you will need to go back to the page where you chose the difficulty. Then, enter "4" to choose "4. Leaderboard".
 
 ## References for Energy quiz
-Time library for the quiz: https://docs.python.org/3/library/time.html
-Values for the five constants: https://physics.nist.gov/cuu/Constants/
+1. Time library for the quiz: https://docs.python.org/3/library/time.html
+2. Values for the five constants: https://physics.nist.gov/cuu/Constants/
