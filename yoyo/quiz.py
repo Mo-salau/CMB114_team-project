@@ -261,7 +261,7 @@ class quiz_class:
                 user_input = input(f"Answer in {unit_to}: ").strip()
 
                 """
-                error handling: control the user can only enter number
+                error handling: control the user can only enter a number
                 """
                 try:
                     user_answer = float(user_input)
@@ -280,7 +280,7 @@ class quiz_class:
                     retry = input("Try again? (y/n): ").lower().strip()
                     if retry == "y":
                             try:
-                                user_answer = float(user_input)
+                                user_answer = float(input(f"Retry: Answer in {unit_to}: ").strip())
                             except ValueError:
                                 print("Please enter a number.")
                                 continue
