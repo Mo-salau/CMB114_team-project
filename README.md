@@ -1,12 +1,12 @@
 # CMB114 CW2 Unit converter and energy quiz tool by Yoyo and Muhammed
 
-
 The code is divided between folders `mohammed` and `yoyo` for the group project. The code division is indicated with the file name and also typed in each file.
 
 You can run the code by calling
 ~~~~
 python driver.py
 ~~~~
+Constants are stored in a PhysicalConstants class inside converter_engine.py. Values are from NIST CODATA 2018: https://physics.nist.gov/cuu/Constants/
 ## Running from GitHub
 We came across various problems when trying to run the code through git due to our folder structures and python not knowing where some files were, so empty `__init__.py` files
 were added to both folders. This tells Python that the folders have python in them and should treat them as packages.
@@ -58,3 +58,4 @@ To access the leaderboard, you will need to go back to the page where you chose 
 
 ## References for Energy quiz
 Time library for the quiz: https://docs.python.org/3/library/time.html
+Values for the five constants: https://physics.nist.gov/cuu/Constants/
