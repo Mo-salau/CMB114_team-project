@@ -41,7 +41,7 @@ def load_question():
     """
     open and load the question for beginner and intermediate levels stored in JSON file
     """
-    with open("question_bank.json","r") as data: 
+    with open("yoyo/question_bank.json","r") as data: 
         question_bank=json.load(data)
         return question_bank
     
@@ -108,24 +108,19 @@ class quiz_class:
                 while True:
                     retry = input("Try again? (y/n): ").lower().strip()
                     if retry == "y":
-                        while True: 
-                            user_answer = input("Answer (e.g. A): ").lower().strip()
-                            """
-                            error handling
-                            """
-                            if len(user_answer) != 1 or user_answer not in "abcd":
-                                print("Please enter a valid option (A/B/C/D)")
-                                continue
-                            if user_answer == q["answer"].lower():
-                                print("Correct!")
-                                print(q["explanation"])
-                                score += 1
-                                correct = True
-                                break                           
-                            else:
-                                print("Still incorrect.")
-                        if correct:
-                            break
+                        user_answer = input("Answer (e.g. A): ").lower().strip()
+                        
+                        # error handling
+                        if len(user_answer) != 1 or user_answer not in "abcd":
+                            print("Please enter a valid option (A/B/C/D)")
+                            continue
+                        if user_answer == q["answer"].lower():
+                            print("Correct!")
+                            print(q["explanation"])
+                            score += 1
+                            break                           
+                        else:
+                            print("Still incorrect.")
                     elif retry == "n":
                         print(f"Correct answer: {q['answer']}")
                         print(q["explanation"])
@@ -180,18 +175,14 @@ class quiz_class:
                 while True:
                     retry = input("Try again? (y/n): ").lower().strip()
                     if retry == "y":
-                        while True: 
-                            user_answer = input("Answer (e.g. A): ").lower().strip()
-                            if user_answer == q["answer"].lower():
-                                print("Correct!")
-                                print(q["explanation"])
-                                score += 1
-                                correct = True
-                                break                           
-                            else:
-                                print("Still incorrect.")
-                        if correct:
-                            break
+                        user_answer = input("Answer: ").lower().strip()
+                        if user_answer == q["answer"].lower():
+                            print("Correct!")
+                            print(q["explanation"])
+                            score += 1
+                            break                           
+                        else:
+                            print("Still incorrect.")
                     elif retry == "n":
                         print(f"Correct answer: {q['answer']}")
                         print(q["explanation"])
