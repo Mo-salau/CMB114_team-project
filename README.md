@@ -3,7 +3,7 @@
 The code is divided between folders `mohammed` and `yoyo` for the group project. The code division is indicated with the file name and also typed in each file.
 
 ## General info
-This tool aims to let users convert an energy value to a supported unit and test the understanding of energy.
+This tool aims to let users convert an energy value to a supported unit and test their understanding of energy.
 
 You can run the code by calling
 ~~~~
@@ -45,8 +45,9 @@ The quiz covers the frequency, wavelengths and energy in physical chemistry. It 
 It has different question types, such as multiple choice, definition, and unit conversion.
 For multiple-choice and definition questions, the questions are stored in a JSON file (question_bank.json).
 For unit conversion questions, the code randomly generates numbers and units for the questions. The units are from the dictionary in the code.
-At the end of the quiz, a summary report will be exported. Leaderboard is also available if there is more than one attempt at the quiz.
-Explaination and correct answer are shown after getting the question correctly or choose not to retry after getting the question wrong.
+The time used to complete the quiz is also available. The time library is imported for this function.
+At the end of the quiz, a summary report (CSV file) will be exported. Leaderboard is also available if there is more than one attempt at the quiz.
+Explanation and correct answer are shown after getting the question correctly, or choose not to retry after getting the question wrong.
 
 ### How to use the quiz function 
 1. When entering the menu, choose "2. Energy quiz".
