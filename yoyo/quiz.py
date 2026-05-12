@@ -1,6 +1,5 @@
-"""
-code written by Yoyo
-"""
+# code written by Yoyo
+
 import os
 import json
 import random
@@ -37,38 +36,37 @@ TO_JOULES = {
     "Eh":       27.2113862 * 1.602176634e-19
 }
 
-"""
-open and load the question for beginner and intermediate levels stored in JSON file
-"""
+
 def load_question():
+    """
+    open and load the question for beginner and intermediate levels stored in JSON file
+    """
     with open("question_bank.json","r") as data: 
         question_bank=json.load(data)
         return question_bank
     
-"""
-function to check the conversion answer
-"""
+
 class check:
     """
-    convert to Joules first
+    function to check the conversion answer
     """
     def to_joules(self,value, unit):
+        """
+        convert to Joules first
+        """
         if unit == "nm":
             return (H * C) / (value * 1e-9)
         return value * TO_JOULES[unit]
 
-    """
-    Converting Joules to the given unit
-    """
     def from_joules(self,joules, unit):
+        """
+        Converting Joules to the given unit
+        """
         if unit == "nm":
             return (H * C) / joules / 1e-9
         return joules / TO_JOULES[unit]
 
 
-"""
-define class
-"""
 class quiz_class:
     def beginner(self):
         """
@@ -77,28 +75,23 @@ class quiz_class:
         print("Difficulty choosen: Beginner")
         bank = load_question()
         level_questions = bank["beginner"]
-
-        """
-        randomly pick 3 questions from the bank
-        """
+        
+        # randomly pick 3 questions from the bank
+        
         selected = random.sample(level_questions, 3) 
 
-        """
-        count the time
-        """
+        # count the time
         time_start = time.time() 
         score=0      
         for i,q in enumerate(selected, start=1):
-            """time passed"""
+            # time passed
             elapsed = time.time() - time_start 
             print(f"\nTime elapsed: {elapsed:.1f} seconds")
             print(f"Question {i}: {q['question']}")
             for option in q["options"]:
                 print(option)
             
-            """
-            error handling: control the user can only enter one character
-            """
+            # error handling: control the user can only enter one character
             while True:
                 user_answer = input("\nAnswer (e.g. A):" ).lower().strip()
                 if len(user_answer) == 1 and user_answer in "abcd": 
@@ -111,9 +104,7 @@ class quiz_class:
                 print(f"Explanation: ", q['explanation'])
             else:
                 print("Incorrect!")
-                """
-                let user choose to retry the question the got wrong
-                """
+                # let user choose to retry the question the got wrong
                 while True:
                     retry = input("Try again? (y/n): ").lower().strip()
                     if retry == "y":
@@ -141,26 +132,26 @@ class quiz_class:
                         break
                     else:
                         print("Please enter y / n.")
-            """
-            skip showing in the last question
-            """                   
+           
+            # skip showing in the last question                             
             if i != 3:
                 input("\nPress Enter to proceed to the next question...")
                        
         print(f"\nFinal Score: {score}/3")
-        """stop counting time"""
+        # stop counting time
         time_end = time.time() 
-        """get the time taken to complete the quiz"""
+        # get the time taken to complete the quiz
         time_taken = round(time_end - time_start, 2) 
         print(f"\nYou took {time_taken} seconds to complete.")
         print("Summary of the quiz stored. Please check in the same directory and open with notepad.\n")
         
         return score, time_taken
 
-    """
-    quiz at intermediate level
-    """
+    
     def intermediate(self):
+        """
+        quiz at intermediate level
+        """
         print("Difficulty choosen: Intermediate")
         bank = load_question()
         level_questions = bank["intermediate"]
@@ -172,9 +163,7 @@ class quiz_class:
             print(f"\nTime elapsed: {elapsed:.1f} seconds")
             print(f"Question {i}: {q['question']}")
 
-            """
-            error handling: control the user can only enter characters
-            """        
+            # error handling: control the user can only enter characters      
             while True:
                 user_answer = input("\nAnswer:" ).lower().strip()
                 if user_answer:
@@ -220,20 +209,18 @@ class quiz_class:
         print("Summary of the quiz stored. Please check in the same directory and open with notepad.\n")
         return score, time_taken
 
-    """
-    quiz at advanced level
-    """
+    
     def advanced(self):
+        """
+        quiz at advanced level
+        """
         score = 0
         time_start=time.time()
-        """
-        get units from TO_JOULES
-        """
+
+        # get units from TO_JOULES
         units = list(TO_JOULES.keys()) 
 
-        """
-        generate 3 questions for unit conversion with for loop
-        """
+        # generate 3 questions for unit conversion with for loop
         for i in range (1,4):
             unit_from = random.choice(units)
             unit_to = random.choice([x for x in units if x != unit_from]) # avoide choosing the same unit to convert in the question
@@ -245,10 +232,9 @@ class quiz_class:
 
             else:
                 value = round(random.uniform(1, 100), 3)
-            """
-            convert the value in question to get the correct answer, convert it to joule first, then to the target unit
-            call the function from converter_engine
-            """
+                
+            # convert the value in question to get the correct answer, convert it to joule first, then to the target unit
+            # call the function from converter_engine
             ck = check()
             joules = ck.to_joules(value, unit_from)
             correct = ck.from_joules(joules, unit_to)
@@ -260,17 +246,14 @@ class quiz_class:
             while True:
                 user_input = input(f"Answer in {unit_to}: ").strip()
 
-                """
-                error handling: control the user can only enter a number
-                """
+                # error handling: control the user can only enter a number
                 try:
                     user_answer = float(user_input)
                     break
                 except ValueError:
                     print("Please enter a valid number (e.g. 1.23e-19)")
-            """
-            allow error
-            """
+                    
+            # allow error
             if correct != 0 and abs(user_answer - correct) / correct < 0.01:
                 print("Correct!")
                 score += 1
@@ -306,30 +289,31 @@ class quiz_class:
         print("Summary of the quiz stored. Please check in the same directory and open with notepad.\n")
         return score, time_taken
 
-"""
-print a summary of the quiz
-"""
+
 def summary(username, difficulty, score, time_taken):
+    """
+    print a summary of the quiz
+    """
     file_exists = os.path.isfile("score.csv")
     with open("score.csv", "a",newline = "") as csv_file:
         writer=csv.writer(csv_file)
 
-        """only write the row's titles if they are not exist in the file"""
+        # only write the row's titles if they are not exist in the file
         if not file_exists: 
             writer.writerow(["Username", "Difficulty", "Score /3", "Percentage", "Time taken"])
         writer.writerow([username, difficulty, score, f"{(score/3)*100}%", f"{time_taken} s"])
 
-"""
-class for leaderboard
-"""
+
 class ranking:
+    """
+    class for ranking the record
+    """
     def leaderboard(self):
         results=[]
         with open("score.csv", "r") as f:
             reader = csv.reader(f)
-            """
-            skip header row
-            """
+
+            # skip header row
             next(reader) 
             for row in reader:
                 if len(row) < 4:
@@ -337,9 +321,8 @@ class ranking:
                 name = row[0]
                 difficulty = row[1]
                 score = int(row[2])
-                """
-                compare using float for percentage and time
-                """
+
+                # compare using float for percentage and time
                 percent = float(row[3].replace("%", "")) 
                 time_taken = float(row[4].replace("s", ""))
                 results.append((name, difficulty, score, percent, time_taken))
@@ -352,12 +335,13 @@ class ranking:
             name, diff, score, percent, time_taken = r
             print(f"{i} | {name} | {diff} | {score}/3 | {percent}% | {time_taken}")
 
-"""
-class to run the quiz
-"""
+
 def run_quiz():
+    """
+    run the quiz
+    """
     print("\n--- UNIT CONVERSION QUIZ ---")
-    """enter name before choosing the difficulty"""
+    # enter name before choosing the difficulty
     while True:
         username = input("Enter your username: ").strip()
         if len(username) >= 3:
@@ -374,9 +358,7 @@ def run_quiz():
         print(" 4. Leaderboard")
         print(" q. Quit")
 
-        """
-        user can choose the difficulty or to quit the quiz
-        """
+        # user can choose the difficulty or to quit the quiz
         choice = input("\n  Select: ").strip().lower()
 
         qc = quiz_class()
